@@ -1,0 +1,21 @@
+#!/bin/bash
+cd "`dirname \"$0\"`/.."
+if ! scons; then
+    tput bold
+    tput setaf 1
+    echo 'BUILD FAILED'
+    exit 1
+fi
+for test in tests/*.test; do
+    if $test; then
+        tput bold
+        tput setaf 1
+        echo 'FAILED'
+        tput sgr0
+        exit 1
+    fi
+done
+tput bold
+tput setaf 2
+echo 'PASSED'
+tput sgr0

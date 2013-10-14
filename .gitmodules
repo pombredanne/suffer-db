@@ -1,0 +1,6 @@
+[submodule "ext/critbit"]
+	path = ext/critbit
+	url = git@github.com:sufianrhazi/critbit.git
+[submodule "ext/seatest"]
+	path = ext/seatest
+	url = git@github.com:sufianrhazi/seatest.git
